@@ -1,6 +1,11 @@
 # website を管理するリポジトリ
 
-# 階層構造
+## メニュー
+
+- HOME
+- ABOUT
+
+## 階層構造
 
 ```
 /Users/hope/myWebsite
@@ -9,14 +14,13 @@
 │   └── css
 │   └── images
 │   └── js
-├── routes
-│   └──
 ├── views
 │   └── partials
+├── build
 └── README.md
 ```
 
-# パッケージ
+## パッケージ
 
 ### npm
 
@@ -31,7 +35,19 @@
 
 - skeleton-2.0.4 [公式サイト](http://getskeleton.com/)
 
-# メニュー
+## cloudflare pages を用いたデプロイの仕方
 
-- HOME
-- ABOUT
+- `package.json`の`script`プロパティに  
+  `"build": "ejs views/index.ejs -o build/index.html && ejs views/about.ejs -o build/about.html && cp -r public/* build/"`  
+  を追加
+
+- EJS を HTML に変換，静的ファイルを`build`ディレクトリにコピー
+
+  - `npm run build`
+
+- [cloudflare ダッシュボード](https://www.cloudflare.com/ja-jp/)にログイン，
+- ビルド設定を行う
+  - ビルドコマンド: `npm run build`
+  - 出力ディレクトリ: `build`
+- 設定を保存すると自動的にデプロイ開始
+- [nzm-blog.com](https://nzm-blog.com)にアクセスして確認
