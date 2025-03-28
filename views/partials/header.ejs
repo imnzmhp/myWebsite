@@ -1,4 +1,4 @@
-<header>
+<header class="header">
   <div class="container">
     <div class="header-left">
       <a href="/">nzm-blog</a>
@@ -10,20 +10,37 @@
         <a href="https://github.com/imnzmhp"
           >GitHub <span class="fa fa-github"></span
         ></a>
-        <div class="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button
+          id="js-hamburger"
+          type="button"
+          class="hamburger"
+          aria-controls="navigation"
+          aria-expanded="false"
+          aria-label="メニューを開く"
+        >
+          <span class="hamburger__line"></span>
+          <span class="hamburger__text"></span>
+        </button>
+        <div class="header__nav-area js-nav-area" id="navigation">
+          <nav id="js-global-navigation" class="global-navigation">
+            <ul class="global-navigation__list">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/about">About</a>
+              </li>
+              <li>
+                <a href="https://github.com/imnzmhp"
+                  >GitHub <span class="fa fa-github"></span
+                ></a>
+              </li>
+            </ul>
+            <div id="js-focus-trap" tabindex="0"></div>
+          </nav>
         </div>
       </nav>
     </div>
-  </div>
-  <div class="mobile-menu">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="https://github.com/imnzmhp"
-      >GitHub <span class="fa fa-github"></span
-    ></a>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/js/script.js"></script>
