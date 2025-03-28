@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ejs views/index.ejs -o build/index.html && ejs views/about.ejs -o build/about.html && cp -r public/* build/"
   },
   "keywords": [],
   "author": "",
