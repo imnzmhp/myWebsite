@@ -3,7 +3,7 @@ a {
 }
 
 header {
-  height: 65px;
+  height: 60px;
   width: 100%;
   background-color: #808080;
   color: #fff;
@@ -11,6 +11,9 @@ header {
   position: fixed;
   top: 0;
   z-index: 10;
+  display: flex;
+  align-items: center; /* ヘッダー内の要素を縦方向に中央揃え */
+  justify-content: space-between; /* 左右の要素を均等に配置 */
 }
 
 header a {
@@ -23,27 +26,34 @@ header a {
 
 .header-left a {
   font-size: large;
-  line-height: 65px;
-  padding: 0 25px;
+  line-height: 60px;
+  padding: 0 20px;
   display: block;
   float: left;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
+}
+
+.header-left a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .header-right {
   float: right;
+  display: block;
 }
 
 .header-right a {
-  line-height: 65px;
-  padding: 0 25px;
-  display: block;
+  line-height: 60px;
+  padding: 0 20px;
   float: left;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
+}
+.header-right a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 footer {
-  height: 65px;
+  height: 60px;
   width: 100%;
 }
 
@@ -54,17 +64,17 @@ footer a {
   float: left;
 }
 .footer-left p {
-  line-height: 65px;
+  line-height: 60px;
 }
 .footer-right {
   float: right;
 }
 .footer-right p {
-  line-height: 65px;
+  line-height: 60px;
 }
 
 .footer-right a {
-  transition: all 0.5s;
+  transition: all 0.5s ease;
 }
 
 .fa {
@@ -73,9 +83,107 @@ footer a {
 
 .about-content a {
   color: #222;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
 }
 
 .about-content a:hover {
   color: #ffa500;
+}
+/* ハンバーガーメニューのスタイル */
+.hamburger-menu {
+  display: block; /* デフォルトでは非表示 */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  padding: 20px 20px; /* 左右の余白を調整 */
+  cursor: pointer;
+  position: relative; /* nav内での位置を調整 */
+  top: 50%;
+  z-index: 30; /* 他の要素より前面に表示 */
+  transition: all 0.5s ease; /* スムーズな変化 */
+}
+
+.hamburger-menu span {
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.5s ease; /* スムーズな変化 */
+}
+
+/* ハンバーガーメニューのホバー時のスタイル */
+.hamburger-menu:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* 背景色を変更 */
+}
+
+.hamburger-menu:hover span {
+  background-color: #ffa500; /* 各バーの色を変更 */
+}
+
+/* ハンバーガーメニューの「×」ボタンスタイル */
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  width: 30px;
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  width: 30px;
+}
+
+/* モバイルメニューのスタイル */
+.mobile-menu {
+  visibility: hidden; /* 初期状態は非表示 */
+  opacity: 0; /* 初期状態は透明 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* フレックスボックスを有効にする */
+  flex-direction: column;
+  justify-content: center; /* 垂直方向に中央揃え */
+  align-items: center; /* 水平方向に中央揃え */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  z-index: 20;
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* 透明度と表示状態をスムーズに */
+}
+
+.mobile-menu a {
+  color: #fff;
+  font-size: 2rem;
+  margin: 15px 0;
+  text-decoration: none;
+}
+
+.mobile-menu.active {
+  visibility: visible; /* 表示状態に切り替え */
+  opacity: 1; /* 完全に表示 */
+}
+/* メディアクエリでハンバーガーメニューを表示 */
+@media (min-width: 550px) {
+  .hamburger-menu {
+    display: none; /* ハンバーガーメニューを表示 */
+  }
+  .header-right a {
+    display: block; /* ヘッダー右側のメニューを非表示 */
+  }
+}
+@media (max-width: 550px) {
+  .hamburger-menu {
+    display: flex; /* ハンバーガーメニューを表示 */
+  }
+  .header-right a {
+    display: none; /* ヘッダー右側のメニューを非表示 */
+  }
 }
