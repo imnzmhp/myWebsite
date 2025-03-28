@@ -2,8 +2,11 @@
 
 ## メニュー
 
-- HOME
-- ABOUT
+ハンバーガーメニューは[このサイト](https://baigie.me/engineerblog/definitive-hamburger-menu/)を参照
+
+- Home
+- About
+- GitHub
 
 ## 階層構造
 
