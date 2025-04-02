@@ -48,8 +48,9 @@
 
   - `npm run build`
 
-- [cloudflare ダッシュボード](https://www.cloudflare.com/ja-jp/)にログイン，
-- ビルド設定を行う
+- [cloudflare](https://www.cloudflare.com/ja-jp/)にログイン，
+- リポジトリをインポート
+- ビルド設定
   - ビルドコマンド: `npm run build`
   - 出力ディレクトリ: `build`
 - 設定を保存すると自動的にデプロイ開始
