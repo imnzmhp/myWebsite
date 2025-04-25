@@ -11,7 +11,7 @@
 ## 階層構造
 
 ```
-/Users/hope/myWebsite
+myWebsite
 ├── app.js
 ├── public
 │   └── css
